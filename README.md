@@ -1,3 +1,3 @@
-# cocoa-c's home
+# cocoa-c soft
 
-cocoa-c's home page
+cocoa-c's official website
