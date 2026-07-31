@@ -1,0 +1,38 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/vue-fontawesome": "^3.0.8",
+    "@iconify/types": "^2.0.0",
+    "@iconify/vue": "^5.0.0",
+    "@nuxt/content": "^3.6.3",
+    "@nuxt/icon": "^2.0.0",
+    "@nuxt/image": "^1.10.0",
+    "@vesp/nuxt-fontawesome": "^1.2.1",
+    "better-sqlite3": "^12.2.0",
+    "ipx": "^3.0.3",
+    "nuxt": "^4.4.2",
+    "vue": "^3.5.31",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-regular-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@iconify-json/uil": "^1.2.3",
+    "@types/parse-path": "^7.1.0",
+    "baseline-browser-mapping": "^2.9.11",
+    "sass-embedded": "^1.89.2",
+    "sharp": "^0.34.5",
+    "vite-plugin-devtools-json": "^0.2.1"
+  }
+}
