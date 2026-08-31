@@ -32,6 +32,7 @@ useHead(() => ({
 <style scoped lang="scss">
 .slug-page{
     width: 100%;
+    padding-top: 200px;
     .content-title-block{
         opacity: 0;
         animation: slideInUp 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
