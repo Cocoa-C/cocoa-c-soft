@@ -1,5 +1,5 @@
 <script lang="ts">
-import SocialButton from './social-button.vue';
+
 </script>
 
 <template>

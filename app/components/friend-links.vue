@@ -19,7 +19,7 @@ defineProps<{
     </div>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 .inner {
     display: flex;
     align-items: center;
@@ -43,7 +43,7 @@ defineProps<{
         min-height: 40px;
     }
     @include small-tablet {
-        padding: 0.2rem;
+        padding: 1rem;
     }
 }
 

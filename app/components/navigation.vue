@@ -19,28 +19,33 @@ const isActive = (path: string) => {
             <ul id="nav">
                 <NuxtLink to="/" class="NLink":class="{'is-active': isActive('/')}">
                     <div class="icon">
-                        <font-awesome-icon icon="fa-solid fa-home"/>
+                        <font-awesome-icon icon="fa-solid fa-home"/>                        
                     </div>
+                    <div class="text">Home</div>
                 </NuxtLink>
                 <NuxtLink to="/profile" class="NLink":class="{'is-active': isActive('/profile')}">
                     <div class="icon">
                         <font-awesome-icon icon="fa-solid fa-user"/>
                     </div>
+                    <div class="text">Profile</div>
                 </NuxtLink>
                 <NuxtLink to="/links" class="NLink":class="{'is-active': isActive('/links')}">
                     <div class="icon">
-                        <font-awesome-icon icon="fa-solid fa-link"/>
+                        <font-awesome-icon icon="fa-solid fa-link"/>                        
                     </div>
+                    <div class="text">Links</div>
                 </NuxtLink>
                 <NuxtLink to="/blog" class="NLink":class="{'is-active': isActive('/blog')}">
                     <div class="icon">
                         <font-awesome-icon icon="fa-solid fa-blog"/>
                     </div>
+                    <div class="text">Blog</div>
                 </NuxtLink>
                 <NuxtLink to="/about" class="NLink":class="{'is-active': isActive('/about')}">
                     <div class="icon">
                         <font-awesome-icon icon="fa-solid fa-info-circle"/>
                     </div>
+                    <div class="text">About</div>
                 </NuxtLink>
             </ul>
         </div>
@@ -51,8 +56,10 @@ const isActive = (path: string) => {
 .navigation{
     display: flex;
     position: fixed;
-    height: 80px;
     width: 100%;
+    height: 80px;
+    top: 40px;
+    z-index: 1000;
     align-items: center;
 }
 
@@ -67,10 +74,10 @@ const isActive = (path: string) => {
 .logo-icon{
     display: flex;
     position: fixed;
-    left: 10px;
-    font-size: 65px;
+    left: 30px;
+    font-size: 100px;
     z-index: 100;
-    @include phone {
+    @include small-tablet {
         opacity: 0;
     }
 }
@@ -78,17 +85,23 @@ const isActive = (path: string) => {
 .right{
     position: fixed;
     display: flex;
-    right: 10px;
+    right: 55px;
     z-index: 100;
     justify-content: flex-end;
+    @include small-tablet {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        justify-content: center;
+    }
 }
 
 #nav {
     position: relative;
     border: none;
     width: 100%;
-    max-width: 270px;
-    padding: 5px;
+    max-width: auto;
+    padding: 1px;
     border-radius: 10em;
     display: flex;
     list-style: none;
@@ -96,23 +109,32 @@ const isActive = (path: string) => {
     backdrop-filter: blur(3px);
     box-shadow: 0px 0px 20px #104f584d;
     justify-content: center;
+    @include small-tablet {
+        width: auto;
+        max-width: calc(100vw - 24px);
+    }
 }
 
 .NLink {
     font-size: 15px;
-    width: 15px;
-    height: 15px;
-    padding: 20px;
+    width: 75px;
+    min-height: 15px;
+    padding: 15px;
     color: var(--neutral);
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 20px 1fr;
     align-items: center;
+    column-gap: 10px;
     position: relative;
     &.is-active {
       color: var(--accent-500);
     }
     &:hover::after {
     transition: 0.3s;
+    }
+    @include small-tablet {
+        width: 30px;
+        height: 30px;
     }
 }
 
@@ -125,18 +147,40 @@ const isActive = (path: string) => {
 }
 
 .icon{
-    position: fixed;
+    position: relative;
     display: flex;
+    justify-self: start;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
     font-size: 16.66px;
     transition: 0.2s;
+    line-height: 1;
+    @include small-tablet {
+        width: 30px;
+        font-size: 20px;
+    }
+}
+
+.text {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    line-height: 1;
+    font-size: 15px;
+    text-align: right;
+    @include small-tablet {
+        display: none;
+        opacity: 0;
+    }
 }
 
 .NLink::after{
     content: "";
     background: var(--hover-overlay-light);
-    width: 75%;
-    height: 75%;
-    border-radius: 50%;
+    width: 87.5%;
+    height: 87.5%;
+    border-radius: 5rem;
     position: absolute;
     top: 50%;
     left: 50%;
