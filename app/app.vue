@@ -13,6 +13,8 @@ useHead({
 </template>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
 :root {
 	--accent-300:#104f58;
 	--accent-500:#42bbcc;
@@ -33,12 +35,13 @@ useHead({
 html{
     background-color: var(--main-bg);
     transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'Microsoft YaHei UI', 'Microsoft YaHei', sans-serif;
 }
 
 * {
 	padding: 0;
 	margin: 0;
-	font-family:"Microsoft YaHei UI", "Microsoft YaHei";
+	font-family: 'Microsoft YaHei UI', 'Microsoft YaHei', sans-serif;
 }
 
 h1,
@@ -77,7 +80,10 @@ a {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 0px 35px;
+	width: 100%;
+	min-height: 100vh;
+	padding: 0 35px;
+	box-sizing: border-box;
 }
 
 .cube{
