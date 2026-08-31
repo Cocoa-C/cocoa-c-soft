@@ -14,12 +14,6 @@ useHead({
                 <div class="Primary-Profile">
                     <div class="Profile-item">
                         <div class="item-inner">
-                            <font-awesome-icon icon="fa-solid fa-location-dot" class="Profile-icon"/>
-                            <div class="Profile-text">Shanghai</div>
-                        </div>
-                    </div>
-                    <div class="Profile-item">
-                        <div class="item-inner">
                             <font-awesome-icon icon="fa-solid fa-transgender" class="Profile-icon"/>
                             <div class="Profile-text">He, Him</div>
                         </div>
@@ -58,12 +52,6 @@ useHead({
                     </div>
                     <div class="Profile-item">
                         <div class="item-inner">
-                            <ProfileIcon name="icon:soka" class="Profile-icon"/>
-                            <div class="Profile-text">Soka Gakkai</div>
-                        </div>
-                    </div>
-                    <div class="Profile-item">
-                        <div class="item-inner">
                             <ProfileIcon name="icon:touhou" class="Profile-icon"/>
                             <div class="Profile-text">Touhou</div>
                         </div>
@@ -72,12 +60,6 @@ useHead({
                         <div class="item-inner">
                             <font-awesome-icon icon="fa-solid fa-cubes" class="Profile-icon"/>
                             <div class="Profile-text">Minecraft</div>
-                        </div>
-                    </div>
-                    <div class="Profile-item">
-                        <div class="item-inner">
-                            <font-awesome-icon icon="fa-solid fa-gamepad" class="Profile-icon"/>
-                            <div class="Profile-text">Galgames</div>
                         </div>
                     </div>
                     <div class="Profile-item">
@@ -109,7 +91,6 @@ useHead({
 .title{
     display: flex;
     align-items: center;
-    padding-top: 1rem;
 }
 
 h2 { 
@@ -132,7 +113,7 @@ h2 {
 
 .Primary-Profile, .Secondary-Profile { 
     display: grid; 
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(3, 1fr); 
     @include small-tablet {
         grid-template-columns: repeat(2, 1fr); 
     }

@@ -6,11 +6,11 @@ useHead({
 
 <template>
     <div class="container">
-        <div class="title">
-            <h2>Links</h2>
-        </div>
-        <h3>Friend's Sites</h3>
+
         <div class="content">
+            <div class="title">
+                <h2>Friend's Sites</h2>
+            </div>
             <div class="linkslist">
                 <div class="link-wrapper">
                     <FriendLinks 
@@ -42,13 +42,13 @@ useHead({
                         description="Nothing easy is worth doing."
                     />
                 </div>
-                <div class="link-wrapper">
+                <!-- <div class="link-wrapper">
                     <FriendLinks 
                         name="Lian" 
                         avatar="https://avatars.githubusercontent.com/u/172176062" 
                         to="https://blog.yeastar.xin" 
                     />
-                </div>
+                </div>-->
             </div>
         </div>
     </div>
@@ -59,11 +59,10 @@ useHead({
 .title{
     display: flex;
     align-items: center;
-    padding-top: 1rem;
 }
 
 h2 { 
-    margin: 2rem; 
+    margin: 1rem; 
     opacity: 0;
     animation: slideInUp 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
@@ -79,30 +78,32 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    max-width: 840px;
+    width: min(100%, 840px);
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .linkslist {
     display: grid;
-    width: 100%;
+    width: min(100%, 840px);
     max-width: 840px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     border-radius: 1rem;
     background-color: var(--card);
     box-shadow: 0px 5px 10px rgba(0,0,0,0.15);
-    padding: 1.5rem; 
+    padding: 1.5rem;
+    box-sizing: border-box;
     opacity: 0;
-    margin: 0 -35px;
+    margin: 0 auto;
     animation: slideInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     animation-delay: 0.2s;
         @include tablet { 
-        grid-template-columns: repeat(2, 1fr); 
+        grid-template-columns: repeat(2, minmax(0, 1fr)); 
         max-width: 600px;
         }
         @include small-tablet {
-         grid-template-columns: repeat(1, 1fr); 
-         max-width: 250px;
+        grid-template-columns: repeat(1, minmax(0, 1fr)); 
+        max-width: 400px;
         }
 }
 
