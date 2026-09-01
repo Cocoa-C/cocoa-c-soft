@@ -57,8 +57,8 @@ useHead({
 .box-two {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-    padding: 12px 14px;
+    gap: 20px;
+    padding: 20px;
     background-color: var(--card);
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
     border-radius: 1rem;
@@ -69,7 +69,7 @@ useHead({
 .box-one {
     display: flex;
     width: min(100%, 520px);
-    padding: 12px 14px;
+    padding: 20px;
     background-color: var(--card);
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
     border-radius: 1rem;
@@ -113,7 +113,7 @@ useHead({
         background-color: var(--card);
         box-shadow: 0 5px 10px rgba(0,0,0,0.15);
         color: var(--accent-500);
-        transform: translateY(-0.25rem);
+        transform: translateY(-0.1rem);
         @include dark {
             box-shadow: 0 0.25rem 1rem #42bbcc1a;
         }
