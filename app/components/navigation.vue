@@ -105,13 +105,15 @@ const isActive = (path: string) => {
     border-radius: 10em;
     display: flex;
     list-style: none;
-    background: #42bbcc10;
+    background: #42bbcc00;
     backdrop-filter: blur(3px);
-    box-shadow: 0px 0px 20px #104f584d;
+    box-shadow: 0px 0px 0px #104f584d;
     justify-content: center;
     @include small-tablet {
         width: auto;
         max-width: calc(100vw - 24px);
+        background: #42bbcc10;
+        box-shadow: 0px 0px 20px #104f584d;
     }
 }
 
