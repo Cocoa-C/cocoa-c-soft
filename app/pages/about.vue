@@ -10,7 +10,7 @@ useHead({
             <h2>Use Technologies</h2>
             <div class="box box-two">
                 <div class="tech-item">
-                    <technologies name="Vue" techicon="icon:vue" description="v3.5.51" to="https://vuejs.org/" target="_blank" class="tech-link"/>
+                    <technologies name="Vue" techicon="icon:vue" description="v3.5.31" to="https://vuejs.org/" target="_blank" class="tech-link"/>
                 </div>
                 <div class="tech-item">
                     <technologies name="Nuxt" techicon="icon:nuxt" description="v4.4.2" to="https://nuxt.com/" target="_blank" class="tech-link"/>
@@ -19,7 +19,7 @@ useHead({
                     <technologies name="Typescript" techicon="icon:typescript" description="v5" to="https://www.typescriptlang.org/" target="_blank" class="tech-link"/>
                 </div>
                 <div class="tech-item">
-                    <technologies name="Node.js" techicon="icon:nodejs" description="v24.8.0" to="https://nodejs.org/" target="_blank" class="tech-link"/>
+                    <technologies name="Node.js" techicon="icon:nodejs" description="v24.16.0" to="https://nodejs.org/" target="_blank" class="tech-link"/>
                 </div>
             </div>
             <h2>Code Repository</h2>
