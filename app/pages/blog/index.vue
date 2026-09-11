@@ -37,7 +37,7 @@ const { data: articles } = await useAsyncData('blog', () =>
     justify-content: flex-start;
     width: 100%;
     max-width: 840px;
-    padding-top: 200px;
+    padding-top: 100px;
 }
 
 .title{
