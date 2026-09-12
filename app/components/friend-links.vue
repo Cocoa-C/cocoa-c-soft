@@ -1,4 +1,4 @@
-<script  setup lang="ts">
+<script setup lang="ts">
 defineProps<{
   name: string
   avatar: string
@@ -10,7 +10,7 @@ defineProps<{
 <template>
     <div class="inner">
       <NuxtLink :to="to" class="link" target="_blank">
-        <NuxtImg :src="avatar" :alt="name" class="friends-avatar" preload />
+        <img :src="avatar" :alt="name" class="friends-avatar" />
         <div class="texts">
           <span class="name">{{ name }}</span>
           <span v-if="description" class="description">{{ description }}</span>
