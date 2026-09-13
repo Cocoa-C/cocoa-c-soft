@@ -3,7 +3,7 @@ import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: false },
-  modules: ['@vesp/nuxt-fontawesome', '@nuxt/image', '@nuxt/icon', '@nuxt/content'
+  modules: ['@vesp/nuxt-fontawesome','@nuxt/icon', '@nuxt/content'
   ],
   ssr: false,
   app: {
@@ -20,9 +20,6 @@ export default defineNuxtConfig({
         dir: './app/assets/icons'
       },
     ],
-  },
-  image: {
-
   },
   vite: {
     css: {
