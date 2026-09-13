@@ -2,9 +2,41 @@
 useHead({
     title: "Blog",
 })
-const { data: articles } = await useAsyncData('blog', () =>
-  queryCollection('blog').all(),
-)
+
+type BlogArticle = {
+  title?: string
+  date?: string
+  description?: string
+  slug?: string
+  path?: string
+}
+
+const getArticleSlug = (article?: BlogArticle | null) => {
+  if (!article) return ''
+
+  if (article.slug) return article.slug
+
+  if (!article.path) return ''
+
+  const segments = article.path.split('/')
+  return segments[segments.length - 1] ?? ''
+}
+
+const toSlugNumber = (article?: BlogArticle | null) => {
+  const raw = getArticleSlug(article) || '0'
+  const parsed = Number.parseInt(raw, 10)
+  return Number.isNaN(parsed) ? 0 : parsed
+}
+
+const getArticleLink = (article?: BlogArticle | null) => {
+  const slug = getArticleSlug(article)
+  return slug ? `/blog/${slug}` : '/blog'
+}
+
+const { data: articles } = await useAsyncData<BlogArticle[]>('blog', async () => {
+  const list = await queryCollection('blog').all()
+  return [...list].sort((a, b) => toSlugNumber(b) - toSlugNumber(a))
+})
 </script>
 
 <template>
@@ -13,8 +45,8 @@ const { data: articles } = await useAsyncData('blog', () =>
             <div class="title">
                 <h2>Blog</h2>
             </div>
-            <div class="blog-list" v-for="article in articles" :key="article.path">
-                <NuxtLink :to="`/blog/${article.slug ?? article.path.split('/').pop()}`" class="blogs">
+            <div class="blog-list" v-for="article in articles" :key="getArticleSlug(article) || article.title || 'blog-item'">
+                <NuxtLink :to="getArticleLink(article)" class="blogs">
                     <BlogCard :title="article.title" :date="article.date" :description="article.description" />
                 </NuxtLink>
             </div>
@@ -69,6 +101,7 @@ h2{
     flex-direction: column;
     transition: 0.2s;
     border-radius: 10px;
+    margin: 10px;
     background-color: var(--card);
     box-shadow: 0 5px 10px rgba(0,0,0,0.15);
     &:hover{
