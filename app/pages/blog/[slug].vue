@@ -1,3 +1,4 @@
+
 <script setup lang="ts">
 const route = useRoute()
 const slug = String(route.params.slug || '')
@@ -59,6 +60,7 @@ useHead(() => ({
             flex-direction: row;
             align-items: center;
             color: var(--neutral);
+            gap: 5px;
             margin-bottom: 10px;
         }
     }
@@ -68,6 +70,7 @@ useHead(() => ({
         max-width: 960px;
         margin: 20px auto;
         padding: 0 60px;
+
         :deep(a) {
             color: var(--accent-500) !important;
             text-decoration: none;
@@ -83,8 +86,51 @@ useHead(() => ({
             margin: 0 0 1rem;
             line-height: 1.8;
             color: var(--text);
+            -webkit-user-select: text;
+            -ms-user-select: text;
+            user-select: text;
+        }
+
+        :deep(h1),
+        :deep(h2),
+        :deep(h3),
+        :deep(h4),
+        :deep(h5),
+        :deep(h6),
+        :deep(a),
+        :deep(li) {
+            -webkit-user-select: text;
+            -ms-user-select: text;
+            user-select: text;
+        }
+
+        :deep(img) {
+            display: block;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+            margin: 1.5rem auto;
+            border-radius: 12px;
+            object-fit: contain;
+            -webkit-user-drag: auto;
+            -webkit-touch-callout: default;
+            pointer-events: auto;
+        }
+
+        :deep(img[style]) {
+            max-width: 100% !important;
+            width: auto !important;
+            height: auto !important;
+            display: block !important;
+            margin: 1.5rem auto !important;
         }
     }
 
+    @media (max-width: 640px) {
+        .content-render {
+            padding: 0 16px;
+        }
+    }
 }
 </style>
+
