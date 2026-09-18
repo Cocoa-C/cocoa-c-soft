@@ -49,6 +49,13 @@ useHead({
                         to="https://blog.yeastar.xin" 
                     />
                 </div>-->
+				<div class="link-wrapper">
+                    <FriendLinks 
+                        name="Mochizunda" 
+                        avatar="https://avatars.githubusercontent.com/u/177280187" 
+                        to="https://mochizunda.dev" 
+                    />
+                </div>
             </div>
         </div>
     </div>
