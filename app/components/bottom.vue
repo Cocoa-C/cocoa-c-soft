@@ -32,5 +32,9 @@ export default {
             color: var(--accent-500);
         }
     }
+    @include small-tablet {
+        height: 40px;
+        font-size: 12px;
+    }
 }
 </style>
