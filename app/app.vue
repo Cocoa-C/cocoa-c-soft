@@ -18,6 +18,7 @@ useHead({
 :root {
 	--accent-300:#104f58;
 	--accent-500:#42bbcc;
+	--accent-bottom:#42bbccb0;
 	--card:#f5f5f5;
 	--hover-overlay: rgb(0 0 0 / 5%);
 	--hover-overlay-light: rgb(255 255 255 / 15%);
@@ -25,6 +26,7 @@ useHead({
 	--neutral:#757575;
 	--text: black;
 	@include dark {
+		--accent-bottom:#42bbcc80;
 		--card:#333333;
 		--main-bg: #212121;
 		--text: white;
