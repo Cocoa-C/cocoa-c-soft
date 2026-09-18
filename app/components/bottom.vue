@@ -22,6 +22,8 @@ export default {
     bottom: 0;
     font-size: 17px;
     background: var(--card);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px -2px 5px;
+    backdrop-filter: blur(10px);
     a{
         color: var(--text);
         text-decoration: none;
