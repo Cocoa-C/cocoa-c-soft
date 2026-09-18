@@ -61,6 +61,9 @@ const isActive = (path: string) => {
     top: 40px;
     z-index: 1000;
     align-items: center;
+    @include small-tablet {
+        top: 20px;
+    }
 }
 
 .logo{
