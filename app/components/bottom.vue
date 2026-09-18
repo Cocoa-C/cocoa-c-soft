@@ -21,7 +21,7 @@ export default {
     z-index: 1000;
     bottom: 0;
     font-size: 17px;
-    background: var(--card);
+    background: var(--accent-bottom);
     box-shadow: rgba(0, 0, 0, 0.2) 0px -2px 5px;
     backdrop-filter: blur(10px);
     a{
