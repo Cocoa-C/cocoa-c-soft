@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import { ref, onMounted, watch, computed } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
-const underlineStyle = ref({})
 const isActive = (path: string) => {
   if (path === '/') return route.path === '/'
   return route.path === path || route.path.startsWith(path + '/')
@@ -19,7 +17,7 @@ const isActive = (path: string) => {
             <ul id="nav">
                 <NuxtLink to="/" class="NLink":class="{'is-active': isActive('/')}">
                     <div class="icon">
-                        <font-awesome-icon icon="fa-solid fa-home"/>                        
+                        <font-awesome-icon icon="fa-solid fa-home"/>
                     </div>
                     <div class="text">Home</div>
                 </NuxtLink>
@@ -31,7 +29,7 @@ const isActive = (path: string) => {
                 </NuxtLink>
                 <NuxtLink to="/links" class="NLink":class="{'is-active': isActive('/links')}">
                     <div class="icon">
-                        <font-awesome-icon icon="fa-solid fa-link"/>                        
+                        <font-awesome-icon icon="fa-solid fa-link"/>
                     </div>
                     <div class="text">Links</div>
                 </NuxtLink>
@@ -57,12 +55,11 @@ const isActive = (path: string) => {
     display: flex;
     position: fixed;
     width: 100%;
-    height: 80px;
-    top: 40px;
+    height: 160px;
     z-index: 1000;
     align-items: center;
     @include small-tablet {
-        top: 20px;
+        height: 100px;
     }
 }
 
