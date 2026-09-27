@@ -5,7 +5,7 @@
     <div>
         <Navigation />
         <slot></slot>
-		<Bottom />
+		<Bottom v-if="route.name !== 'blog-slug'" />
     </div>
 </template>
 
