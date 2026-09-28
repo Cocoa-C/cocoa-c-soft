@@ -13,7 +13,7 @@ const isActive = (path: string) => {
         <div class="logo">
             <LogoIcon name="icon:logo" class="logo-icon"/>
         </div>
-        <div class="right">
+        <nav class="right" aria-label="Main navigation">
             <ul id="nav">
                 <NuxtLink to="/" class="NLink":class="{'is-active': isActive('/')}">
                     <div class="icon">
@@ -46,154 +46,220 @@ const isActive = (path: string) => {
                     <div class="text">About</div>
                 </NuxtLink>
             </ul>
-        </div>
+        </nav>
     </div>
 </template>
 
 <style scoped lang="scss">
-.navigation{
+.navigation {
+    --hud-ink: #244b5c;
+    --hud-muted: #718b98;
+    --hud-blue: #21a9c7;
+    --hud-line: rgba(57, 151, 177, 0.22);
+    --hud-panel: rgba(250, 254, 255, 0.92);
+    --hud-dot: rgba(33, 169, 199, 0.11);
+    --hud-shadow: 0 8px 24px rgba(28, 83, 101, 0.11), inset 0 1px 0 #fff;
+    --hud-active: rgba(80, 209, 231, 0.15);
+    --hud-hover: rgba(80, 209, 231, 0.1);
     display: flex;
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 160px;
+    height: 112px;
     z-index: 1000;
     align-items: center;
+    justify-content: space-between;
+    padding: 22px 36px;
+    box-sizing: border-box;
+    pointer-events: none;
+
+    > * {
+        pointer-events: auto;
+    }
+
     @include small-tablet {
-        height: 100px;
+        height: 82px;
+        padding: 12px;
+        justify-content: center;
+    }
+
+    @include dark {
+        --hud-ink: #e0edf0;
+        --hud-muted: #86a9b5;
+        --hud-blue: #36c5dc;
+        --hud-line: rgba(88, 190, 211, 0.25);
+        --hud-panel: rgba(30, 47, 55, 0.96);
+        --hud-dot: rgba(88, 190, 211, 0.1);
+        --hud-shadow: 0 8px 24px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+        --hud-active: rgba(54, 197, 220, 0.2);
+        --hud-hover: rgba(54, 197, 220, 0.12);
     }
 }
 
-.logo{
+.logo {
     display: flex;
-    position: fixed;
     align-items: center;
-    width: 100%;
-    justify-content: flex-start
+    gap: 11px;
 }
 
-.logo-icon{
+.logo-icon {
     display: flex;
-    position: fixed;
-    left: 30px;
-    font-size: 100px;
-    z-index: 100;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    font-size: 80px;
+    color: var(--hud-blue);
+    filter: drop-shadow(0 2px 2px rgba(25, 108, 133, 0.15));
+
     @include small-tablet {
-        opacity: 0;
+        display: none;
     }
 }
 
-.right{
-    position: fixed;
+.right {
     display: flex;
-    right: 55px;
-    z-index: 100;
     justify-content: flex-end;
+
     @include small-tablet {
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%);
+        width: 100%;
         justify-content: center;
     }
 }
 
 #nav {
-    position: relative;
-    border: none;
-    width: 100%;
-    max-width: auto;
-    padding: 1px;
-    border-radius: 10em;
     display: flex;
     list-style: none;
-    background: #42bbcc00;
-    backdrop-filter: blur(3px);
-    box-shadow: 0px 0px 0px #104f584d;
     justify-content: center;
+    gap: 4px;
+    padding: 5px;
+    border: 1px solid var(--hud-line);
+    background-color: var(--hud-panel);
+    background-image: radial-gradient(var(--hud-dot) 0.7px, transparent 0.7px);
+    background-size: 8px 8px;
+    box-shadow: var(--hud-shadow);
+    backdrop-filter: blur(14px);
+    clip-path: polygon(0 0, calc(100% - 13px) 0, 100% 13px, 100% 100%, 13px 100%, 0 calc(100% - 13px));
+    transition: background-color 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+
     @include small-tablet {
-        width: auto;
-        max-width: calc(100vw - 24px);
-        background: #42bbcc10;
-        box-shadow: 0px 0px 20px #104f584d;
+        width: 100%;
+        max-width: 460px;
+        gap: 2px;
     }
 }
 
 .NLink {
-    font-size: 15px;
-    width: 75px;
-    min-height: 15px;
-    padding: 15px;
-    color: var(--neutral);
     display: grid;
-    grid-template-columns: 20px 1fr;
-    align-items: center;
-    column-gap: 10px;
     position: relative;
+    grid-template-columns: 18px auto;
+    align-items: center;
+    justify-content: center;
+    column-gap: 8px;
+    min-width: 76px;
+    min-height: 42px;
+    padding: 0 12px;
+    color: var(--neutral);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    transition: color 180ms ease, background-color 180ms ease;
+
     &.is-active {
-      color: var(--accent-500);
+        color: #087f9c;
+        background: var(--hud-active);
+
+        &::before {
+            transform: scaleX(1);
+        }
     }
-    &:hover::after {
-    transition: 0.3s;
+
+    &::before {
+        position: absolute;
+        top: -5px;
+        left: 8px;
+        right: 8px;
+        height: 2px;
+        content: '';
+        background: var(--hud-blue);
+        box-shadow: 0 0 8px rgba(33, 169, 199, 0.55);
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform 180ms ease;
     }
+
     @include small-tablet {
-        width: 30px;
-        height: 30px;
+        flex: 1;
+        min-width: 0;
+        min-height: 44px;
+        grid-template-columns: 1fr;
+        padding: 0 5px;
+    }
+}
+
+.NLink:hover,
+.NLink:focus-visible {
+    color: #087f9c;
+    background-color: var(--hud-hover);
+}
+
+.NLink:focus-visible {
+    outline: 2px solid var(--hud-blue);
+    outline-offset: -2px;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    font-size: 15px;
+    line-height: 1;
+    transition: transform 180ms ease;
+
+    @include small-tablet {
+        justify-self: center;
+        width: 22px;
+        font-size: 18px;
     }
 }
 
 .NLink:hover .icon {
-    color: var(--accent-500);
-}
-
-.NLink.is-active .icon {
-    color: var(--accent-500);
-}
-
-.icon{
-    position: relative;
-    display: flex;
-    justify-self: start;
-    align-items: center;
-    justify-content: center;
-    width: 20px;
-    font-size: 16.66px;
-    transition: 0.2s;
-    line-height: 1;
-    @include small-tablet {
-        width: 30px;
-        font-size: 20px;
-    }
+    transform: translateY(-1px);
 }
 
 .text {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
+    font-family: 'Montserrat', sans-serif;
     line-height: 1;
-    font-size: 15px;
-    text-align: right;
+
     @include small-tablet {
         display: none;
-        opacity: 0;
     }
 }
 
-.NLink::after{
-    content: "";
-    background: var(--hover-overlay-light);
-    width: 87.5%;
-    height: 87.5%;
-    border-radius: 5rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    box-shadow: 0px 0px 5px #104f584d;
-    transform: translate(-50%, -50%);
-    transition: 0.2s;
-    z-index: -1;
+@include dark {
+    .NLink.is-active,
+    .NLink:hover,
+    .NLink:focus-visible {
+        color: #80e5f1;
+    }
+
+    .logo-icon {
+        filter: drop-shadow(0 2px 5px rgba(54, 197, 220, 0.28));
+    }
 }
 
-.NLink:hover::after {
-    transform: translate(-50%, -50%) scale(1.1);
-    box-shadow: 0px 0px 10px #42bbcc4d;
+@media (prefers-reduced-motion: reduce) {
+    #nav,
+    .NLink,
+    .NLink::before,
+    .icon {
+        transition: none;
+    }
 }
 </style>
+
