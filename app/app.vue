@@ -67,9 +67,13 @@ h6{
 	system-ui,
 	sans-serif;
 	color: var(--accent-500);
-	-webkit-user-select: text; /* Safari */
-    -ms-user-select: text; /* IE 10+ */
-    user-select: text; /* Standard */
+}
+
+html body,
+html body * {
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 a {
