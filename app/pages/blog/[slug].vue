@@ -1,4 +1,3 @@
-
 <script setup lang="ts">
 const route = useRoute()
 const slug = String(route.params.slug || '')
@@ -54,6 +53,8 @@ useHead(() => ({
         margin-top: 35px;
         h2{
             margin: 2rem;
+            color:var(--accent-300);
+            font-family: 'Montserrat', sans-serif;
         }
         .date{
             display: flex;
@@ -72,7 +73,7 @@ useHead(() => ({
         padding: 0 60px;
 
         :deep(a) {
-            color: var(--accent-500) !important;
+            color: var(--accent-300) !important;
             text-decoration: none;
         }
 
@@ -133,4 +134,6 @@ useHead(() => ({
     }
 }
 </style>
+
+
 
