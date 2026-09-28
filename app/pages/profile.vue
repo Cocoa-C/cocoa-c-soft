@@ -257,9 +257,10 @@ h2 {
         transition: transform 180ms ease, box-shadow 180ms ease, color 180ms ease, border-color 180ms ease;
 
         @include small-tablet {
-            flex-direction: row;
-            justify-content: center;
-            gap: 10px;
+            display: grid;
+            grid-template-columns: minmax(0, calc(50% - 41px)) 24px 10px minmax(0, 1fr);
+            align-items: center;
+            gap: 0;
         }
     }
 
@@ -289,7 +290,11 @@ h2 {
     color: #2aa5bd;
     @include small-tablet {
         font-size: 18px;
+        flex: 0 0 24px;
         width: 24px;
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: center;
     }
 }
 
@@ -300,6 +305,10 @@ h2 {
     text-align: center;
     @include small-tablet {
         font-size: 11px;
+        grid-column: 4;
+        grid-row: 1;
+        min-width: 0;
+        text-align: left;
     }
 }
 
