@@ -33,6 +33,13 @@ useHead(() => ({
 .slug-page{
     width: 100%;
     padding-top: 100px;
+
+    &, :deep(*) {
+        -webkit-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
+    }
+
     .content-title-block{
         opacity: 0;
         animation: slideInUp 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -134,6 +141,8 @@ useHead(() => ({
     }
 }
 </style>
+
+
 
 
 
