@@ -57,9 +57,16 @@
 
 .icon{
     opacity: 0;
-    animation: blurAppear 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation: blurAppear 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     @for $i from 1 through 8 {
-        &:nth-child(#{$i}) { animation-delay: #{(4 + $i - 1) * 0.1}s; }
+        &:nth-child(#{$i}) { animation-delay: #{(0.12 + ($i - 1) * 0.06)}s; }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .icon {
+        opacity: 1;
+        animation: none;
     }
 }
 </style>
