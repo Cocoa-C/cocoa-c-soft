@@ -101,8 +101,6 @@ function onClick() {
     transform-origin: left center; 
     h1 {    
         font-weight: bold;
-        -webkit-user-select: text;
-        user-select: text;
     }
     @include small-tablet {
         font-size: 35px;
@@ -142,8 +140,6 @@ function onClick() {
     transform-origin: left center; 
     h2 {
         font-weight: normal;
-        -webkit-user-select: text;
-        user-select: text;
     }
         @include small-tablet {
         font-size: 15px;
