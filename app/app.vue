@@ -16,8 +16,8 @@ useHead({
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 
 :root {
-	--accent-300:#104f58;
-	--accent-500:#42bbcc;
+	--accent-300:#168ca9;;
+	--accent-500:#36c5dc;
 	--accent-bottom:#42bbccb0;
 	--card:#f5f5f5;
 	--hover-overlay: rgb(0 0 0 / 5%);
@@ -67,9 +67,9 @@ h6{
 	system-ui,
 	sans-serif;
 	color: var(--accent-500);
-	-webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10+ */
-    user-select: none; /* Standard */
+	-webkit-user-select: text; /* Safari */
+    -ms-user-select: text; /* IE 10+ */
+    user-select: text; /* Standard */
 }
 
 a {
@@ -121,3 +121,4 @@ a {
   filter: blur(5px);
 }
 </style>
+
