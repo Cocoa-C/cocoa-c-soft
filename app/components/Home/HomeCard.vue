@@ -5,6 +5,7 @@ const idx = ref(0)
 const message = ref(options[idx.value])
 
 function onClick() {
+    if (window.getSelection()?.toString()) return
   idx.value = (idx.value + 1) % options.length
   message.value = options[idx.value]
 }
@@ -100,6 +101,8 @@ function onClick() {
     transform-origin: left center; 
     h1 {    
         font-weight: bold;
+        -webkit-user-select: text;
+        user-select: text;
     }
     @include small-tablet {
         font-size: 35px;
@@ -139,6 +142,8 @@ function onClick() {
     transform-origin: left center; 
     h2 {
         font-weight: normal;
+        -webkit-user-select: text;
+        user-select: text;
     }
         @include small-tablet {
         font-size: 15px;
