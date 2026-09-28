@@ -68,7 +68,7 @@ function onClick() {
 
 .left{
     padding-right: 40px;
-    animation: blurAppear 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation: blurAppear 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     opacity: 0;
     @include small-tablet {
         padding-right: 0;
@@ -96,7 +96,7 @@ function onClick() {
     display: flex;
     height: 110px;
     justify-content: flex-start;
-    transition: filter 0.4s ease, transform 0.4s ease;
+    transition: filter 0.25s ease, transform 0.25s ease;
     transform-origin: left center; 
     h1 {    
         font-weight: bold;
@@ -119,12 +119,12 @@ function onClick() {
 
 .title{
     opacity: 0;
-    animation: blurAppear2 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation: blurAppear2 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     @for $i from 1 through 3 {
-        &:nth-child(#{$i}) { animation-delay: #{(4 + $i - 1) * 0.12}s; }
+        &:nth-child(#{$i}) { animation-delay: #{(0.15 + ($i - 1) * 0.1)}s; }
     }
     @include small-tablet {
-        animation: blurAppear 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        animation: blurAppear 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
         justify-content: center;
     }
 }
@@ -135,7 +135,7 @@ function onClick() {
     padding-top: 10px;
     padding-bottom: 25px;
     font-size: 20px;
-    transition: transform 0.35s ease; 
+    transition: transform 0.22s ease; 
     transform-origin: left center; 
     h2 {
         font-weight: normal;
@@ -161,7 +161,7 @@ function onClick() {
     height: auto;
     border-radius: 50%;
     box-shadow: 0px 0px 60px #42bbcc4d;
-    transition: transform 0.35s ease; 
+    transition: transform 0.22s ease; 
 }
 
 .avatar:hover {
