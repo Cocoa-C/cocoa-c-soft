@@ -91,7 +91,7 @@ const { data: articles } = await useAsyncData<BlogArticle[]>('blog', async () =>
     position: relative;
     margin: 0;
     padding-left: 15px;
-    color: var(--accent-300);
+    color: var(--accent-500);
     font-family: 'Montserrat', sans-serif;
     font-size: 24px;
     font-weight: 800;
