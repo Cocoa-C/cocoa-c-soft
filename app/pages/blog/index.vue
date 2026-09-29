@@ -122,7 +122,7 @@ const { data: articles } = await useAsyncData<BlogArticle[]>('blog', async () =>
     overflow: hidden;
     margin: 8px 10px;
     border: 1px solid rgba(54, 163, 190, 0.24);
-    border-radius: 4px;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
     background-color: rgba(249, 254, 255, 0.96);
     background-image:
         linear-gradient(90deg, var(--accent-500) 0 34px, transparent 34px),
@@ -179,6 +179,9 @@ const { data: articles } = await useAsyncData<BlogArticle[]>('blog', async () =>
 }
 
 @include dark {
+    h2{
+        color: #65d2e4;
+    }
     .blogs {
         border-color: rgba(88, 190, 211, 0.25);
         background-color: rgba(30, 47, 55, 0.96);
@@ -219,3 +222,4 @@ const { data: articles } = await useAsyncData<BlogArticle[]>('blog', async () =>
     }
 }
 </style>
+
