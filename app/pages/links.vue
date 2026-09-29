@@ -43,6 +43,13 @@ useHead({
                         description="Nothing easy is worth doing."
                     />
                 </div>
+				<!-- <div class="link-wrapper">
+                    <FriendLinks 
+                        name="Lian" 
+                        avatar="https://avatars.githubusercontent.com/u/172176062" 
+                        to="https://blog.yeastar.xin" 
+                    />
+                </div>-->
                 <div class="link-wrapper">
                     <FriendLinks 
                         name="Mochizunda" 
@@ -50,13 +57,6 @@ useHead({
                         to="https://mochizunda.dev" 
                     />
                 </div>
-                <!-- <div class="link-wrapper">
-                    <FriendLinks 
-                        name="Lian" 
-                        avatar="https://avatars.githubusercontent.com/u/172176062" 
-                        to="https://blog.yeastar.xin" 
-                    />
-                </div>-->
             </div>
         </div>
     </div>
@@ -141,6 +141,7 @@ h2 {
     background-image: radial-gradient(rgba(40, 157, 185, 0.09) 0.7px, transparent 0.7px);
     background-size: 9px 9px;
     box-shadow: 0 7px 18px rgba(34, 85, 101, 0.09), inset 0 1px 0 #fff;
+    clip-path: polygon(0 0, calc(100% - 13px) 0, 100% 13px, 100% 100%, 13px 100%, 0 calc(100% - 13px));
     opacity: 0;
     animation: slideInUp 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) both;
     transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
