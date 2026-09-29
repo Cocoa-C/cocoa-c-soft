@@ -179,7 +179,8 @@ const { data: articles } = await useAsyncData<BlogArticle[]>('blog', async () =>
 }
 
 @include dark {
-    h2{
+    .title h2,
+    :deep(.blog-card h2) {
         color: #65d2e4;
     }
     .blogs {
