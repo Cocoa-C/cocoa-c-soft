@@ -112,6 +112,7 @@ useHead({
     width: 100%;
     padding: 14px;
     border: 1px solid rgba(54, 163, 190, 0.25);
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
     background-color: rgba(249, 254, 255, 0.94);
     background-image: radial-gradient(rgba(40, 157, 185, 0.1) 0.7px, transparent 0.7px);
     background-size: 9px 9px;
@@ -143,6 +144,15 @@ useHead({
 .box-one .tech-item {
     flex: 1;
     width: 100%;
+}
+
+:deep(.box-one .icon) {
+    width: 30px;
+    font-size: 30px;
+}
+
+:deep(.box-one .icon svg) {
+    transform: scale(1.25);
 }
 
 .tech-item {
