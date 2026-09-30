@@ -212,6 +212,7 @@ h2 {
     gap: 10px;
     padding: 12px;
     border: 1px solid rgba(54, 163, 190, 0.24);
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px));
     background-color: rgba(249, 254, 255, 0.92);
     background-image: radial-gradient(rgba(40, 157, 185, 0.09) 0.7px, transparent 0.7px);
     background-size: 9px 9px;
@@ -252,6 +253,7 @@ h2 {
         align-items: center;
         gap: 8px;
         border: 1px solid rgba(54, 163, 190, 0.16);
+        clip-path: polygon(0 0, calc(100% - 7px) 0, 100% 7px, 100% 100%, 7px 100%, 0 calc(100% - 7px));
         background: rgba(255, 255, 255, 0.62);
         color: #64818d;
         transition: transform 180ms ease, box-shadow 180ms ease, color 180ms ease, border-color 180ms ease;
