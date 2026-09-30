@@ -72,6 +72,13 @@ useHead(() => ({
             margin-bottom: 10px;
         }
     }
+
+    @media (prefers-color-scheme: dark) {
+        .content-title-block h2 {
+            color: var(--accent-500);
+        }
+    }
+
     .content-render {
         display: flex;
         flex-direction: column;
@@ -88,6 +95,27 @@ useHead(() => ({
         :deep(h2),
         :deep(h3) {
             margin: 1.2rem 0;
+        }
+
+        :deep(h1),
+        :deep(h2),
+        :deep(h3),
+        :deep(h4),
+        :deep(h5),
+        :deep(h6) {
+            color: var(--accent-300);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :deep(h1),
+            :deep(h2),
+            :deep(h3),
+            :deep(h4),
+            :deep(h5),
+            :deep(h6),
+            :deep(a) {
+                color: var(--accent-500) !important;
+            }
         }
 
         :deep(p) {
